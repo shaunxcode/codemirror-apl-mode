@@ -8,6 +8,13 @@
     };
     builtins = "+ − × ÷ ⋆ ○ ?∈ ⌈ ⌊ ⍴".split(" ");
     return {
+      startState: function() {
+        return {
+          indentStack: null,
+          indentation: 0,
+          mode: false
+        };
+      },
       token: function(stream, state) {
         var style, word;
         style = state.cur(stream, state);
@@ -16,6 +23,9 @@
           style = "keyword";
         }
         return style;
+      },
+      indent: function(state) {
+        return state.indentStack.indentation;
       }
     };
   });
