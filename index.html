@@ -8,7 +8,14 @@
     <script src="http://codemirror.net/addon/edit/matchbrackets.js"></script>
 
     <script src="./apl.js"></script>
-    <style>.CodeMirror {border: 2px inset #dee;}</style>
+    <style>
+	@font-face { font-family: apl; src: url(./apl385.ttf) format(truetype); }
+	body { font-family: apl; }
+	.CodeMirror {
+		border: 2px inset #dee;
+		font-family: apl;
+	}
+    </style>
   </head>
   <body>
     <h1>CodeMirror: APL mode</h1>
